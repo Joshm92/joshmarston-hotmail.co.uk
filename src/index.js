@@ -2,93 +2,111 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 // 0.4 make sure to import createStore from redux
-import { createStore } from "redux";
+
+import store from './data/store.js';
 
 // 0 boilerplate
 
 // 0.1 create initial state
 
-const initial = {
-    player1: 0,
-    player2: 0,
-    player1Serving: true,
-    winner: 0,
-};
+//NOW IN INITIAL.JS ***********************************
+
+// const initial = {
+//     player1: 0,
+//     player2: 0,
+//     player1Serving: true,
+//     winner: 0,
+// };
+
 
 // UPDATE FUNCTIONS
-const updateP1Score = state => {
-    return {
-        ...state,
-        player1: state.player1 + 1
-    };
-};
+//NOW IN UPDATEP1SCORE.JS ***********************************
+
+// const updateP1Score = state => {
+//     return {
+//         ...state,
+//         player1: state.player1 + 1
+//     };
+// };
 
 
-const updateP2Score = state => {
-    return {
-        ...state,
-        player2: state.player2 + 1
-    };
-};
+//NOW IN UPDATEP2SCORE.JS ***********************************
+
+// const updateP2Score = state => {
+//     return {
+//         ...state,
+//         player2: state.player2 + 1
+//     };
+// };
 
 
-const switchServer = state => {
-    console.log('switchServer');
-    const total = state.player1 + state.player2;
 
-    const needToSwitch = total % 5 === 0;
+//NOW IN switchserver.JS ***********************************
 
-    return {
-        ...state,
-        player1Serving: needToSwitch ? !state.player1Serving : state.player1Serving
-    }
-};
+// const switchServer = state => {
+//     console.log('switchServer');
+//     const total = state.player1 + state.player2;
 
+//     const needToSwitch = total % 5 === 0;
 
-const getWinner = state => {
+//     return {
+//         ...state,
+//         player1Serving: needToSwitch ? !state.player1Serving : state.player1Serving
+//     }
+// };
 
-    const theWinner = state.player1 >= 21 || state.player2 >= 21; // setting the winning value to determine whether someone has won or not
+//NOW IN GETWINNER.JS ***********************************
 
-    const higherScore = state.player1 > state.player2 ? 1 : 2; // which player has a higher score
+// const getWinner = state => {
 
-    const newWinner = theWinner ? higherScore : 0;
-    // see if there is a winner
+//     const theWinner = state.player1 >= 21 || state.player2 >= 21; // setting the winning value to determine whether someone has won or not
 
-    return {
-        ...state,
-        winner: newWinner,
-    }
+//     const higherScore = state.player1 > state.player2 ? 1 : 2; // which player has a higher score
+
+//     const newWinner = theWinner ? higherScore : 0;
+//     // see if there is a winner
+
+//     return {
+//         ...state,
+//         winner: newWinner,
+//     }
     
-};
+// };
 
+//NOW IN REDUCER.JS ***********************************
 
-const reducer = (state, action) => {
-    // swith over action type to determine what the user did. You only need actions if it's somthing the user cnad do like hit the reset button or the two player buttons
-    switch (action.type) {
-        //write one case for each possible user action 
+// const reducer = (state, action) => {
+//     // swith over action type to determine what the user did. You only need actions if it's somthing the user cnad do like hit the reset button or the two player buttons
+//     switch (action.type) {
+//         //write one case for each possible user action 
         
-        case 'INCREMENT_PLAYER_1': return getWinner(switchServer(updateP1Score(state)));
-            // 2.4 return an updated version of state from the reducer
-            //this return is function composition. It's taking loads of things and making them return just one thing. it makes things simple. getWinner, Switchserver and updateP1score is all using the same ruturn function.
+//         case 'INCREMENT_PLAYER_1': return getWinner(switchServer(updateP1Score(state)));
+//             // 2.4 return an updated version of state from the reducer
+//             //this return is function composition. It's taking loads of things and making them return just one thing. it makes things simple. getWinner, Switchserver and updateP1score is all using the same ruturn function.
     
 
-        case 'INCREMENT_PLAYER_2': return getWinner(switchServer(updateP2Score(state))); 
+//         case 'INCREMENT_PLAYER_2': return getWinner(switchServer(updateP2Score(state))); 
 
-        case 'RESET': return initial;
+//         case 'RESET': return initial;
 
-        // always return state in the default
-        default: return state;
-    }
-};
+//         // always return state in the default
+//         default: return state;
+//     }
+// };
 
 // step 1. first display values from the store in the app
 
 // 0.3 create the store with the reducer, intitial and optionally redux devtools.
-const store = createStore(
-    reducer, 
-    initial,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    );
+
+
+
+//NOW IN STORE.JS ***********************************
+
+// const store = createStore(
+//     reducer, 
+//     initial,
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+//     );
 
 
 // 2.2 create a function that dispatches something to the reducer

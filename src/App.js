@@ -1,4 +1,6 @@
 import React from "react";
+import Winner from "./Components/Winner.js"
+
 
 const App = ({player1Score, 
   player2Score, 
