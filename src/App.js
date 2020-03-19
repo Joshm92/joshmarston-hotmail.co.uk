@@ -1,5 +1,6 @@
 import React from "react";
-import Winner from "./Components/Winner.js"
+// import Winner from "./Components/Winner.js"
+import Header from "./Components/Header.js"
 
 
 const App = ({player1Score, 
@@ -11,9 +12,11 @@ const App = ({player1Score,
   winner,}) => (
     <React.Fragment>
         {/* header */}
-        <header className="jumbotron mt-4 mb-0">
+        {/* <header className="jumbotron mt-4 mb-0">
             <h1>PongPing</h1>
-        </header>
+        </header> */}
+        
+        <Header />
 
         {/* scores */}
         <div className="row mb-4">

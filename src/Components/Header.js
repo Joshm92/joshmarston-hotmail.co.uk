@@ -1,7 +1,7 @@
 import React from "react";
-import Winner from "./Components/Winner.js"
+// import Winner from "./Components/Winner.js"
 
-const App = ({player1Score, 
+const Header = ({player1Score, 
   player2Score, 
   handlePlayer1Score, 
   handlePlayer2Score, 
