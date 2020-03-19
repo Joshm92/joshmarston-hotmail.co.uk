@@ -115,17 +115,14 @@ import store from './data/store.js';
 // 2.3 pass function to the app
 
 //STORE FUNCTIONS
-const handlePlayer1Score = () => {
-    store.dispatch({ type: 'INCREMENT_PLAYER_1'})
-};    
+// const handlePlayer1Score = () => {
+//     store.dispatch({ type: 'INCREMENT_PLAYER_1'})
+// };    
 
-const handlePlayer2Score = () => {
-    store.dispatch({ type: 'INCREMENT_PLAYER_2'})
-};   
+// const handlePlayer2Score = () => {
+//     store.dispatch({ type: 'INCREMENT_PLAYER_2'})
+// };   
 
-const reset = () => {
-    store.dispatch({ type: 'RESET'})
-};  
 
 
 
@@ -133,21 +130,22 @@ const reset = () => {
 
 const render = () => {
 // below code is requesting a copy of the state. 
-const state = store.getState();
+// const state = store.getState();
 
 // step 1.2 move this line of code into the render function
     ReactDOM.render(
-        <Provider store={store}>
-        <App 
-        // 1.5 pass prop to the app based on the state. taking player1score & player2score to what we've set in app.js
-            player1Score={ state.player1 }
-            player2Score={ state.player2 }
-            handlePlayer1Score= { handlePlayer1Score }
-            handlePlayer2Score= { handlePlayer2Score }
-            player1Serving={ state.player1Serving }
-            reset={ reset }
-            
-        /> 
+        <Provider 
+            store={store}
+        >
+            <App 
+            // 1.5 pass prop to the app based on the state. taking player1score & player2score to what we've set in app.js
+                // player1Score={ state.player1 }
+                // player2Score={ state.player2 }
+                // handlePlayer1Score= { handlePlayer1Score }
+                // handlePlayer2Score= { handlePlayer2Score }
+                // player1Serving={ state.player1Serving }
+                
+            /> 
         </Provider>,
         document.getElementById('root')
     );

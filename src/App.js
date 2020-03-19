@@ -2,17 +2,12 @@ import React from "react";
 import Winner from "./Components/Winner"
 import Header from "./Components/Header"
 import Reset from "./Components/Reset"
-import Scores from "./Components/Scores"
+import Player1 from "./Components/Player/Player1"
+import Player2 from "./Components/Player/Player2"
 
 
 
-const App = ({player1Score, 
-  player2Score, 
-  handlePlayer1Score, 
-  handlePlayer2Score, 
-  reset, 
-  player1Serving,
-  }) => (
+const App = () => (
 
     <React.Fragment>
 
@@ -25,13 +20,19 @@ const App = ({player1Score,
 
         {/* scores */}
 
-        < Scores 
+        {/* < Scores 
             player1Serving={ player1Serving }
             player1Score={ player1Score }
             player2Score={ player2Score }
             handlePlayer1Score={handlePlayer1Score}
             handlePlayer2Score={handlePlayer2Score}
-        />
+        /> */}
+
+        <div className="row mb-4">
+        <Player1/>
+
+        <Player2 />
+        </div>
 
         {/* <div className="row mb-4">
             <div className="col-md-6 mt-4">
@@ -73,7 +74,7 @@ const App = ({player1Score,
         {/* <button onClick={reset} 
         className="btn btn-danger">Reset</button> */}
 
-        < Reset reset={reset} />
+        < Reset />
 
     </React.Fragment>
 );
