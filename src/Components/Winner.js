@@ -1,9 +1,7 @@
-// import React from "react";
+import React from "react";
 
-// const Winner = ({ winner }) => (
+const Winner = ({ winner }) => (
+winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null 
+);
 
-//         winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null }
-
-// );
-
-// export default Winner;
+export default Winner;

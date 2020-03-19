@@ -1,6 +1,7 @@
 import React from "react";
-// import Winner from "./Components/Winner.js"
+import Winner from "./Components/Winner.js"
 import Header from "./Components/Header.js"
+
 
 
 const App = ({player1Score, 
@@ -15,7 +16,7 @@ const App = ({player1Score,
         {/* <header className="jumbotron mt-4 mb-0">
             <h1>PongPing</h1>
         </header> */}
-        
+
         <Header />
 
         {/* scores */}
@@ -48,7 +49,9 @@ const App = ({player1Score,
         </div>
 
         { /* winner message */}
-        { winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null }
+        {/* { winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null } */}
+        
+        <Winner winner ={winner} />
 
         <hr />
 
