@@ -1,6 +1,7 @@
 import React from "react";
 import Winner from "./Components/Winner.js"
 import Header from "./Components/Header.js"
+import Reset from "./Components/Reset.js"
 
 
 
@@ -50,14 +51,17 @@ const App = ({player1Score,
 
         { /* winner message */}
         {/* { winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null } */}
-        
+
         <Winner winner ={winner} />
 
         <hr />
 
         { /* reset button */}
-        <button onClick={reset} 
-        className="btn btn-danger">Reset</button>
+        {/* <button onClick={reset} 
+        className="btn btn-danger">Reset</button> */}
+
+        < Reset reset={reset} />
+
     </React.Fragment>
 );
 
