@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { Provider } from "react-redux";
 // 0.4 make sure to import createStore from redux
 
 import store from './data/store.js';
@@ -136,6 +137,7 @@ const state = store.getState();
 
 // step 1.2 move this line of code into the render function
     ReactDOM.render(
+        <Provider store={store}>
         <App 
         // 1.5 pass prop to the app based on the state. taking player1score & player2score to what we've set in app.js
             player1Score={ state.player1 }
@@ -144,8 +146,9 @@ const state = store.getState();
             handlePlayer2Score= { handlePlayer2Score }
             player1Serving={ state.player1Serving }
             reset={ reset }
-            winner={ state.winner }
-        />, 
+            
+        /> 
+        </Provider>,
         document.getElementById('root')
     );
 };

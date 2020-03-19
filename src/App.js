@@ -1,8 +1,8 @@
 import React from "react";
-import Winner from "./Components/Winner.js"
-import Header from "./Components/Header.js"
-import Reset from "./Components/Reset.js"
-import Scores from "./Components/Scores.js"
+import Winner from "./Components/Winner"
+import Header from "./Components/Header"
+import Reset from "./Components/Reset"
+import Scores from "./Components/Scores"
 
 
 
@@ -12,7 +12,7 @@ const App = ({player1Score,
   handlePlayer2Score, 
   reset, 
   player1Serving,
-  winner,}) => (
+  }) => (
 
     <React.Fragment>
 
@@ -65,7 +65,7 @@ const App = ({player1Score,
         { /* winner message */}
         {/* { winner > 0 ? (<h2 className="alert alert-success">Player { winner } wins!</h2>) : null } */}
 
-        <Winner winner ={winner} />
+        <Winner />
 
         <hr />
 
